@@ -4,3 +4,8 @@ plugins {
 rootProject.name = "state-management"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+include(
+    "deployments:state-management-search",
+    "deployments:state-management-execute"
+)
