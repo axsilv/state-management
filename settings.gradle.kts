@@ -7,5 +7,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(
     "deployments:state-management-search",
-    "deployments:state-management-execute"
+    "deployments:state-management-execute",
+    "deployments:state-management-worker",
+    "deployments:state-management-worker-dlq"
 )

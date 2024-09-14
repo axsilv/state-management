@@ -13,12 +13,6 @@ repositories {
     mavenCentral()
 }
 
-
-
-kotlin {
-    jvmToolchain(21)
-}
-
 subprojects {
     if ( file("src/main/kotlin").isDirectory || file("src/main/resource").isDirectory) {
         apply {
@@ -30,6 +24,10 @@ subprojects {
         }
 
         dependencies {
+            implementation(rootProject.libs.spring.boot)
+            implementation(rootProject.libs.spring.boot.bom)
+            implementation(rootProject.libs.spring.boot.starter)
+
             testImplementation(rootProject.libs.kotest.junit5)
             testImplementation(rootProject.libs.kotest.assertions)
             testImplementation(rootProject.libs.kotest.property)
@@ -42,6 +40,10 @@ subprojects {
 
         repositories {
             mavenCentral()
+        }
+
+        kotlin {
+            jvmToolchain(21)
         }
     }
 }
